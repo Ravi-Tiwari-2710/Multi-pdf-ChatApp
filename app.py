@@ -2,7 +2,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
+from langchain.embeddings import  HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
@@ -33,9 +33,9 @@ def get_text_chunks(text):
 
 def get_vectorstore(text_chunks):
     #embeddings = OpenAIEmbeddings()
-    #embeddings = HuggingFaceEmbeddings(model_name="HuggingFaceH4/zephyr-7b-beta",
-                                #   model_kwargs={'device':"cpu"})
-    embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
+    embeddings = HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl",
+                                   model_kwargs={'device':"cpu"})
+    #embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
 
