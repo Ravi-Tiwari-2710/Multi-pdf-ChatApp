@@ -33,16 +33,16 @@ def get_text_chunks(text):
 
 def get_vectorstore(text_chunks):
     #embeddings = OpenAIEmbeddings()
-    embeddings = HuggingFaceEmbeddings(model_name="HuggingFaceH4/zephyr-7b-beta",
-                                   model_kwargs={'device':"cpu"})
-    #embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
+    #embeddings = HuggingFaceEmbeddings(model_name="HuggingFaceH4/zephyr-7b-beta",
+                                #   model_kwargs={'device':"cpu"})
+    embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
 
 
 def get_conversation_chain(vectorstore):
    # llm = ChatOpenAI()
-    llm = HuggingFaceHub(repo_id="Intel/dynamic_tinybert", model_kwargs={"temperature":0.5, "max_length":512})
+    llm = HuggingFaceHub(repo_id=""HuggingFaceH4/zephyr-7b-beta", model_kwargs={"temperature":0.5, "max_length":512})
 
 
 
