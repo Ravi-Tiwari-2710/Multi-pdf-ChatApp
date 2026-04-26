@@ -81,7 +81,7 @@ def handle_userinput(user_question):
             st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
 
 def main():
-    st.set_page_config(page_title="Nexus PDF Chat", page_icon=":books:", layout="wide")
+    st.set_page_config(page_title="OmniPDF AI", page_icon=":books:", layout="wide")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -89,7 +89,7 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("📚 Nexus PDF Chat: Multi-Doc AI Intelligence")
+    st.header("📚 OmniPDF AI: Multi-Doc Intelligence")
     st.markdown("---")
 
     # Main Chat Interface

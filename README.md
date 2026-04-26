@@ -1,4 +1,4 @@
-# 📚 Nexus PDF Chat: Multi-Document AI Intelligence
+# 📚 OmniPDF AI: Multi-Document Intelligence
 
 A professional RAG (Retrieval-Augmented Generation) application that allows users to upload multiple PDF documents and have an intelligent, context-aware conversation with them.
 
